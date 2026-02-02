@@ -1,0 +1,26 @@
+<svg width="500" height="500" viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <g id="torii-gate">
+    <path d="M120 180 Q250 150 380 180 L385 195 Q250 165 115 195 Z" fill="#8b201a" stroke="#d4af37" stroke-width="2"/>
+    
+    <rect x="150" y="215" width="200" height="15" fill="#d4af37" stroke="#b8860b" stroke-width="1"/>
+    
+    <rect x="175" y="195" width="20" height="150" fill="#d4af37" stroke="#b8860b" stroke-width="1"/>
+    <rect x="305" y="195" width="20" height="150" fill="#d4af37" stroke="#b8860b" stroke-width="1"/>
+    
+    <rect x="170" y="345" width="30" height="40" fill="#5c1612"/>
+    <rect x="300" y="345" width="30" height="40" fill="#5c1612"/>
+  </g>
+
+  <g id="sakura-emblem" transform="translate(250, 340) scale(0.8)">
+    <circle cx="0" cy="0" r="55" fill="none" stroke="#d4af37" stroke-width="4"/>
+    
+    <g fill="#d4af37" stroke="#b8860b" stroke-width="1">
+      <path d="M0,-10 C-15,-40 15,-40 0,-10" transform="rotate(0) translate(0,-15)"/>
+      <path d="M0,-10 C-15,-40 15,-40 0,-10" transform="rotate(72) translate(0,-15)"/>
+      <path d="M0,-10 C-15,-40 15,-40 0,-10" transform="rotate(144) translate(0,-15)"/>
+      <path d="M0,-10 C-15,-40 15,-40 0,-10" transform="rotate(216) translate(0,-15)"/>
+      <path d="M0,-10 C-15,-40 15,-40 0,-10" transform="rotate(288) translate(0,-15)"/>
+    </g>
+    <circle cx="0" cy="0" r="5" fill="#b8860b"/>
+  </g>
+</svg>

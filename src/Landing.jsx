@@ -170,7 +170,7 @@ function HomeParallax() {
         {/* 9. TIMELINE BACKGROUND */}
         <ParallaxLayer offset={2} speed={0.2} style={{ zIndex: 1 }}>
           <img
-            src="/Timeline_bg.png"
+            src="/Timeline_bg.jpg"
             className="w-full h-screen object-cover"
             alt="Timeline Background"
           />
