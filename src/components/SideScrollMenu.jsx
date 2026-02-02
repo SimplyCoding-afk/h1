@@ -26,7 +26,7 @@ const SideScrollMenu = ({ scrollToPage }) => {
           <button onClick={() => handleNavClick(1)}>THEMES</button>
           <button onClick={() => handleNavClick(1)}>PRIZES</button>
           <button onClick={() => handleNavClick(1)}>FAQ</button>
-          <button onClick={() => handleNavClick(1)}>TIMELINE</button>
+          <button onClick={() => handleNavClick(2)}>TIMELINE</button>
         </div>
       </div>
 

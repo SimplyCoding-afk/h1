@@ -3,6 +3,17 @@ import { useRef } from "react";
 
 import CountdownTimer from "./components/CountdownTimer";
 import SideScrollMenu from "./components/SideScrollMenu";
+import Timeline from "./components/Timeline";
+
+// Timeline data for hackathon schedule
+const timelineData = [
+  { date: "Until 28th Feb", title: "Registration", description: "Register your team for the hackathon", icon: "📝" },
+  { date: "1st March, 12:00 PM", title: "Hacking Period Starts", description: "Begin your innovative journey", icon: "🚀" },
+  { date: "1st March, 9:00 PM", title: "Mid Evaluation", description: "Present your progress to the judges", icon: "⚡" },
+  { date: "2nd March, 12:00 PM", title: "Hacking Period Ends", description: "Time to wrap up your project", icon: "⏰" },
+  { date: "2nd March, 12:00 PM - 1:00 PM", title: "Project Submission", description: "Submit your final project", icon: "📦" },
+  { date: "2nd March, 1:00 PM onwards", title: "Final Evaluation", description: "Present your complete project to the judges", icon: "🏆" }
+];
 
 function HomeParallax() {
   const parallaxRef = useRef();
@@ -18,7 +29,7 @@ function HomeParallax() {
     <>
       <SideScrollMenu scrollToPage={scroll} />
 
-      <Parallax ref={parallaxRef} pages={2} style={{ background: "#222" }}>
+      <Parallax ref={parallaxRef} pages={3} style={{ background: "#222" }}>
 
         {/* ==========================
             PAGE 1: SAMURAI HOME
@@ -149,6 +160,44 @@ function HomeParallax() {
               }}
             />
           </div>
+        </ParallaxLayer>
+
+
+        {/* ==========================
+            PAGE 3: TIMELINE SECTION
+            ========================== */}
+
+        {/* 9. TIMELINE BACKGROUND */}
+        <ParallaxLayer offset={2} speed={0.2} style={{ zIndex: 1 }}>
+          <img
+            src="/Timeline_bg.png"
+            className="w-full h-screen object-cover"
+            alt="Timeline Background"
+          />
+        </ParallaxLayer>
+
+        {/* 10. TIMELINE CONTENT */}
+        <ParallaxLayer 
+          offset={2} 
+          speed={0.4} 
+          style={{ 
+            zIndex: 30,
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'center',
+            paddingTop: '5vh',
+            overflow: 'auto'
+          }}
+        >
+          <Timeline items={timelineData} />
+        </ParallaxLayer>
+
+        {/* 11. SUBTLE GOLD GRADIENT OVERLAY */}
+        <ParallaxLayer offset={2} speed={0.1} style={{ zIndex: 10, pointerEvents: 'none' }}>
+          <div style={{ 
+            background: 'linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.05))',
+            height: '100%' 
+          }} />
         </ParallaxLayer>
 
       </Parallax>
