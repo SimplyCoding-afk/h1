@@ -43,7 +43,7 @@ export default function Petals() {
                                     fill: false
                                 },
                                 image: {
-                                    src: "/petal.png", // Your working path
+                                    src: "/petal.webp", // Your working path
                                     width: 100,
                                     height: 100,
                                     replaceColor: false

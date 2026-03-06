@@ -199,7 +199,7 @@ function HomeParallax() {
 
         {/* PAGE 1 — HERO */}
         <section ref={page1Ref} className="hs-section">
-          <animated.img src="/mountain.png" alt="Mountains" className="hs-parallax-img"
+          <animated.img src="/mountain.webp" alt="Mountains" className="hs-parallax-img"
             style={{ zIndex: 1, transform: to([heroSpring.mx, heroSpring.my], (mx, my) => `translate(${mx * -10}px, ${my * -10}px)`) }}
           />
           <animated.img src="/sun.png" alt="Sun"
@@ -210,7 +210,7 @@ function HomeParallax() {
             }}
           />
           {/* Trees — combined mouse + scroll parallax so they move up as you scroll */}
-          <animated.img src="/trees.png" alt="Trees" className="hs-parallax-img"
+          <animated.img src="/trees.webp" alt="Trees" className="hs-parallax-img"
             style={{
               zIndex: 20,
               opacity: 0.85,
@@ -247,7 +247,7 @@ function HomeParallax() {
 
         {/* PAGE 2 — ABOUT */}
         <section ref={page2Ref} className="hs-section">
-          <animated.img src="/about_bg.png" alt="Lake" className="hs-parallax-img"
+          <animated.img src="/about_bg.webp" alt="Lake" className="hs-parallax-img"
             style={{ zIndex: 1, transform: spring2.shift.to((s) => `translateY(${s}px)`) }}
           />
           <div style={{
