@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Lenis from 'lenis';
 import Landing from './Landing';
 import Petals from './components/Petals';
-import VaultPreloader from './components/VaultPreloader';
+import VaultPreloader from './components/Vaultpreloader';
 
 function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
