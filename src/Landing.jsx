@@ -120,7 +120,6 @@ function HomeParallax() {
   const page3Ref = useRef();
   const page4Ref = useRef();
 
-  // Mouse parallax
   const [mouse, setMouse] = useState({ x: 0, y: 0 });
   useEffect(() => {
     const handler = (e) => {
@@ -138,7 +137,6 @@ function HomeParallax() {
     config: { mass: 1, tension: 170, friction: 26 },
   });
 
-  // Scroll parallax springs
   const raw1 = useRawShift(page1Ref, 0.3);
   const raw2 = useRawShift(page2Ref, 0.25);
   const raw3 = useRawShift(page3Ref, 0.25);
@@ -197,7 +195,7 @@ function HomeParallax() {
 
       <div style={{ display: "flex", flexDirection: "column" }}>
 
-        {/* PAGE 1 — HERO */}
+        {/* PAGE 1 — HERO (eager — above the fold) */}
         <section ref={page1Ref} className="hs-section">
           <animated.img src="/mountain.webp" alt="Mountains" className="hs-parallax-img"
             style={{ zIndex: 1, transform: to([heroSpring.mx, heroSpring.my], (mx, my) => `translate(${mx * -10}px, ${my * -10}px)`) }}
@@ -209,7 +207,6 @@ function HomeParallax() {
               transform: to([heroSpring.mx, heroSpring.my], (mx, my) => `translate(calc(-50% + ${mx * -18}px), ${my * -18}px)`),
             }}
           />
-          {/* Trees — combined mouse + scroll parallax so they move up as you scroll */}
           <animated.img src="/trees.webp" alt="Trees" className="hs-parallax-img"
             style={{
               zIndex: 20,
@@ -247,7 +244,7 @@ function HomeParallax() {
 
         {/* PAGE 2 — ABOUT */}
         <section ref={page2Ref} className="hs-section">
-          <animated.img src="/about_bg.webp" alt="Lake" className="hs-parallax-img"
+          <animated.img src="/about_bg.webp" alt="Lake" className="hs-parallax-img" loading="lazy"
             style={{ zIndex: 1, transform: spring2.shift.to((s) => `translateY(${s}px)`) }}
           />
           <div style={{
@@ -255,11 +252,11 @@ function HomeParallax() {
             display: "flex", flexDirection: "column", alignItems: "center",
             justifyContent: "flex-start", paddingTop: "15vh",
           }}>
-            <img src="/ab.png" alt="About HackStreet"
+            <img src="/ab.png" alt="About HackStreet" loading="lazy"
               style={{ width: "clamp(260px, 40vw, 600px)", filter: "drop-shadow(0 4px 24px rgba(0,0,0,0.7))" }}
             />
           </div>
-          <animated.img src="/about_trees.png" alt="Trees" className="hs-parallax-img"
+          <animated.img src="/about_trees.png" alt="Trees" className="hs-parallax-img" loading="lazy"
             style={{ zIndex: 40, pointerEvents: "none", opacity: 0.9, transform: spring2.shift.to((s) => `translateY(${s * 1.4}px)`) }}
           />
           <div style={{ position: "absolute", inset: 0, background: "rgba(0,0,0,0.12)", zIndex: 41, pointerEvents: "none" }} />
@@ -295,7 +292,7 @@ function HomeParallax() {
 
         {/* PAGE 4 — TIMELINE */}
         <section ref={page4Ref} className="hs-section hs-section--auto">
-          <animated.img src="/Timeline_bg.jpg" alt="Timeline Background" className="hs-parallax-img"
+          <animated.img src="/Timeline_bg.jpg" alt="Timeline Background" className="hs-parallax-img" loading="lazy"
             style={{ zIndex: 1, transform: spring4.shift.to((s) => `translateY(${s}px)`) }}
           />
           <div style={{
@@ -321,7 +318,7 @@ function HomeParallax() {
             position: "absolute", inset: 0, zIndex: 1,
           }}>
             <div className="w-full h-full bg-[#050505]">
-              <img src="/prizes_bg.png" className="w-full h-full object-cover opacity-50" alt="Prize Background" />
+              <img src="/prizes_bg.png" className="w-full h-full object-cover opacity-50" alt="Prize Background" loading="lazy" />
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: "radial-gradient(circle, transparent 20%, #050505 100%)" }}
               />
@@ -339,6 +336,7 @@ function HomeParallax() {
                 <img
                   src="/prizepool.png"
                   alt="Prize Pool"
+                  loading="lazy"
                   className="w-[80vw] md:w-[60vw] lg:w-[900px] h-auto object-contain drop-shadow-[0_0_25px_rgba(220,38,38,0.7)] transform transition-transform duration-700 hover:scale-105"
                 />
               </div>
@@ -347,11 +345,12 @@ function HomeParallax() {
 
                 {/* Lucky cat */}
                 <div className="w-full lg:w-2/5 flex justify-center relative pointer-events-none mt-8 lg:mt-12 translate-y-6 lg:translate-y-12">
-                  <div className="absolute -inset-10 bg-red-600/40 blur-[90px] rounded-full animate-strongPulse" />
+                  <div className="absolute -inset-10 bg-red-600/20 blur-[60px] rounded-full animate-strongPulse" />
                   <img
                     src="/cat.png"
                     className="w-[280px] md:w-[450px] lg:w-[650px] relative z-10 opacity-100 drop-shadow-[0_0_20px_rgba(255,0,0,0.3)]"
                     alt="Lucky Cat"
+                    loading="lazy"
                   />
                 </div>
 

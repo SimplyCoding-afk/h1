@@ -30,12 +30,11 @@ const Timeline = ({ items = [], className = '' }) => {
         });
       },
       {
-        threshold: 0.2, // Trigger when 20% of item is visible
-        rootMargin: '0px 0px -100px 0px', // Slight offset from bottom
+        threshold: 0.2,
+        rootMargin: '0px 0px -100px 0px',
       }
     );
 
-    // Observe all timeline items
     itemRefs.current.forEach((ref) => {
       if (ref) observer.observe(ref);
     });
