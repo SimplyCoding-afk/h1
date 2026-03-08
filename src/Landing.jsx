@@ -50,11 +50,11 @@ function MistDivider() {
       `}</style>
 
       {[
-        { top: "10%", dur: "9s",  delay: "0s",   width: "70%", opacity: 0.6,  blur: 18 },
-        { top: "30%", dur: "13s", delay: "1.5s", width: "90%", opacity: 0.5,  blur: 22 },
+        { top: "10%", dur: "9s", delay: "0s", width: "70%", opacity: 0.6, blur: 18 },
+        { top: "30%", dur: "13s", delay: "1.5s", width: "90%", opacity: 0.5, blur: 22 },
         { top: "50%", dur: "11s", delay: "0.5s", width: "80%", opacity: 0.65, blur: 16 },
-        { top: "65%", dur: "15s", delay: "2s",   width: "60%", opacity: 0.45, blur: 24 },
-        { top: "80%", dur: "10s", delay: "3s",   width: "75%", opacity: 0.55, blur: 20 },
+        { top: "65%", dur: "15s", delay: "2s", width: "60%", opacity: 0.45, blur: 24 },
+        { top: "80%", dur: "10s", delay: "3s", width: "75%", opacity: 0.55, blur: 20 },
       ].map((m, i) => (
         <div key={i} style={{
           position: "absolute", top: m.top, left: 0,
@@ -126,7 +126,7 @@ function HomeParallax() {
   useEffect(() => {
     const handler = (e) => {
       setMouse({
-        x: (e.clientX - window.innerWidth  / 2) / (window.innerWidth  / 2),
+        x: (e.clientX - window.innerWidth / 2) / (window.innerWidth / 2),
         y: (e.clientY - window.innerHeight / 2) / (window.innerHeight / 2),
       });
     };
@@ -186,56 +186,57 @@ function HomeParallax() {
           0%, 100% { text-shadow: 0 0 10px rgba(255,255,255,0.5); }
           50%       { text-shadow: 0 0 25px rgba(255,255,255,0.9), 0 0 50px rgba(255,100,100,0.4); }
         }
-          @keyframes glassReflection {
-  0% {
-    transform: translateX(-120%) rotate(20deg);
-    opacity: 0;
-  }
-  40% {
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateX(120%) rotate(20deg);
-    opacity: 0;
-  }
-}
+        
+        @keyframes glassReflection {
+          0% {
+            transform: translateX(-150%) rotate(25deg);
+            opacity: 0;
+          }
+          20% {
+            opacity: 1;
+          }
+          100% {
+            transform: translateX(150%) rotate(25deg);
+            opacity: 0;
+          }
+        }
 
-.glassBox {
-  position: relative;
-  overflow: hidden;
-}
+        .glassBox {
+          position: relative;
+          overflow: hidden;
+        }
 
-.glassBox::after {
-  content: "";
-  position: absolute;
-  top: -50%;
-  left: -120%;
-  width: 60%;
-  height: 200%;
-  background: linear-gradient(
-    120deg,
-    transparent 0%,
-    rgba(255,255,255,0.15) 35%,
-    rgba(255,255,255,0.6) 50%,
-    rgba(255,255,255,0.15) 65%,
-    transparent 100%
-  );
-  filter: blur(10px);
-  pointer-events: none;
-}
+        .glassBox::after {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: 0;
+          width: 150%;
+          height: 200%;
+          background: linear-gradient(
+            90deg,
+            transparent 0%,
+            rgba(255, 255, 255, 0.03) 25%,
+            rgba(255, 255, 255, 0.15) 50%,
+            rgba(255, 255, 255, 0.03) 75%,
+            transparent 100%
+          );
+          filter: blur(20px);
+          pointer-events: none;
+          transform: translateX(-150%) rotate(25deg);
+        }
 
-.glassBox:hover::after {
-  animation: glassReflection 1.2s ease-out;
-}
+        .glassBox:hover::after {
+          animation: glassReflection 0.6s ease-in-out forwards;
+        }
+
         @keyframes shine {
           100% { left: 125%; }
         }
         .animate-strongPulse { animation: strongPulse 3s ease-in-out infinite; }
         .animate-prizeGlow   { animation: prizeGlow 2.5s ease-in-out infinite; }
         .group:hover .animate-shine { animation: shine 0.75s ease-in-out; }
-      `
-      
-      }</style>
+      `}</style>
 
       <SideScrollMenu scrollToPage={scroll} />
 
@@ -295,66 +296,63 @@ function HomeParallax() {
             style={{ zIndex: 1, transform: spring2.shift.to((s) => `translateY(${s}px)`) }}
           />
           <div
-  style={{
-    position: "absolute",
-    inset: 0,
-    zIndex: 30,
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    justifyContent: "flex-start",
-    paddingTop: "4vh",
-    paddingLeft: "20px",
-    paddingRight: "20px",
-  }}
->
+            style={{
+              position: "absolute",
+              inset: 0,
+              zIndex: 30,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+              justifyContent: "flex-start",
+              paddingTop: "4vh",
+              paddingLeft: "20px",
+              paddingRight: "20px",
+            }}
+          >
 
-  {/* ABOUT TITLE */}
-  <img
-  src="/ab.png"
-  alt="About HackStreet"
-  style={{
-    width: "clamp(260px, 35vw, 520px)",
-    marginBottom: "9px",
-    transform: "translateY(-10px)",
-    filter: "drop-shadow(0 6px 28px rgba(0,0,0,0.8))"
-  }}
-/>
+            {/* ABOUT TITLE */}
+            <img
+              src="/ab.png"
+              alt="About HackStreet"
+              style={{
+                width: "clamp(260px, 35vw, 520px)",
+                marginBottom: "9px",
+                transform: "translateY(-10px)",
+                filter: "drop-shadow(0 6px 28px rgba(0,0,0,0.8))"
+              }}
+            />
 
-  {/* GLASS BOX */}
-  <div
-  style={{
-    width: "min(850px, 85vw)",
-    padding: "32px 40px",
-    borderRadius: "16px",
+            {/* GLASS BOX */}
+            <div
+              className="glassBox"
+              style={{
+                width: "min(850px, 85vw)",
+                padding: "32px 40px",
+                borderRadius: "16px",
+                backdropFilter: "blur(16px)",
+                background: "rgba(10,15,25,0.35)",
+                border: "1px solid rgba(120,220,255,0.25)",
+                boxShadow:
+                  "0 0 30px rgba(0,255,255,0.15), inset 0 0 25px rgba(0,0,0,0.35)",
+                color: "rgba(230,240,255,0.9)",
+                textAlign: "center",
+                fontSize: "clamp(14px,1.1vw,18px)",
+                lineHeight: "1.8",
+                fontFamily: "Georgia, serif",
+              }}
+            >
+              HackStreet 4.0 is an electrifying hackathon where innovators,
+              developers, and creators unite to build groundbreaking solutions.
+              Over an intense hacking period, participants collaborate,
+              experiment, and transform bold ideas into impactful technology.
 
-    backdropFilter: "blur(16px)",
-    background: "rgba(10,15,25,0.35)",
+              <br /><br />
 
-    border: "1px solid rgba(120,220,255,0.25)",
+              Join us for 24 hours of creativity, coding, and innovation
+              where technology meets imagination.
+            </div>
 
-    boxShadow:
-      "0 0 30px rgba(0,255,255,0.15), inset 0 0 25px rgba(0,0,0,0.35)",
-
-    color: "rgba(230,240,255,0.9)",
-    textAlign: "center",
-    fontSize: "clamp(14px,1.1vw,18px)",
-    lineHeight: "1.8",
-    fontFamily: "Georgia, serif",
-  }}
->
-    HackStreet 4.0 is an electrifying hackathon where innovators,
-    developers, and creators unite to build groundbreaking solutions.
-    Over an intense hacking period, participants collaborate,
-    experiment, and transform bold ideas into impactful technology.
-
-    <br /><br />
-
-    Join us for 24 hours of creativity, coding, and innovation
-    where technology meets imagination.
-  </div>
-
-</div>
+          </div>
           <animated.img src="/about_trees.png" alt="Trees" className="hs-parallax-img"
             style={{ zIndex: 40, pointerEvents: "none", opacity: 0.9, transform: spring2.shift.to((s) => `translateY(${s * 1.4}px)`) }}
           />
@@ -454,9 +452,9 @@ function HomeParallax() {
                 {/* Prize cards */}
                 <div className="w-full lg:w-3/5 flex flex-col gap-4 pb-8">
                   {[
-                    { rank: "WINNER",        desc: "The Grand Prize will be given to a project that outstands all other submissions.",   amount: "₹50,000", color: "from-yellow-500/40", textColor: "text-yellow-500", glow: "0_0_25px_rgba(234,179,8,1)" },
-                    { rank: "1ST RUNNER UP", desc: "1st Runner-up prize will be given to the second best project of the hackathon.",      amount: "₹30,000", color: "from-slate-400/30",  textColor: "text-slate-300",  glow: "0_0_25px_rgba(203,213,225,0.9)" },
-                    { rank: "2ND RUNNER UP", desc: "2nd Runner-up project of the hackathon will win some awesome prizes.",                amount: "₹20,000", color: "from-orange-800/30", textColor: "text-orange-700", glow: "0_0_25px_rgba(194,65,12,0.9)" },
+                    { rank: "WINNER", desc: "The Grand Prize will be given to a project that outstands all other submissions.", amount: "₹50,000", color: "from-yellow-500/40", textColor: "text-yellow-500", glow: "0_0_25px_rgba(234,179,8,1)" },
+                    { rank: "1ST RUNNER UP", desc: "1st Runner-up prize will be given to the second best project of the hackathon.", amount: "₹30,000", color: "from-slate-400/30", textColor: "text-slate-300", glow: "0_0_25px_rgba(203,213,225,0.9)" },
+                    { rank: "2ND RUNNER UP", desc: "2nd Runner-up project of the hackathon will win some awesome prizes.", amount: "₹20,000", color: "from-orange-800/30", textColor: "text-orange-700", glow: "0_0_25px_rgba(194,65,12,0.9)" },
                   ].map((prize, i) => (
                     <div
                       key={i}
