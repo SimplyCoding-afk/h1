@@ -100,9 +100,9 @@ function Footer() {
           textAlign: "left",
         }}
       >
-
+        \
         {/* COLUMN 1: TITLE */}
-        <div style={{ flex: "1 1 220px" }}> {/* Lowered from 280px to give more room */}
+        <div style={{ flex: "1 1 220px" }}>
           <h2
             style={{
               fontSize: "32px",
@@ -111,10 +111,10 @@ function Footer() {
               margin: "0 0 10px 0",
               textShadow: "0 0 15px rgba(220,38,38,0.8)",
               color: "white",
-              whiteSpace: "nowrap", /* Strictly prevents line breaks */
+              whiteSpace: "nowrap",
             }}
           >
-            HACKSTREET 4.0
+            HACKSTREET <span style={{ fontFamily: "'Times New Roman', Times, serif" }}>4.0</span>
           </h2>
         </div>
 
